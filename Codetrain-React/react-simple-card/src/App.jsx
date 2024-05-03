@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import './Components/SimpleCard'
+import SimpleCard from './Components/SimpleCard'
 
 function App() {
   return (

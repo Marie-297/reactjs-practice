@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class simpleCard extends Component {
+class SimpleCard extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ export class simpleCard extends Component {
   }
 }
 
-export default simpleCard
+export default SimpleCard

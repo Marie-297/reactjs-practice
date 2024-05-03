@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class image extends Component {
+class Image extends Component {
   render() {
     return (
       <div>
-        <img className="Simplecard" src="" alt="card"/>
+        <img className="Simplecard" src={this.props.image} alt="card"/>
       </div>
     )
   }
 }
 
-export default image
+export default Image

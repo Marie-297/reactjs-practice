@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class description extends Component {
+class Description extends Component {
   render() {
     return (
       <div>
-         <p className="description">Description</p>
+         <p className="description">{this.props.description}</p>
       </div>
     )
   }
 }
 
-export default description
+export default Description

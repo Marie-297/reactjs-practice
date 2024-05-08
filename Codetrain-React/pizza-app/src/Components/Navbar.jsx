@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AppAbout from '../AppAbout'
 
 class Navbar extends Component {
   render() {
@@ -7,7 +8,7 @@ class Navbar extends Component {
         <nav className="navbar navbar-expand-lg sticky-lg-top sticky-md-top sticky-sm-top bg-body-tertiary">
           <div className="container-fluid navv">
             <a className="navbar-brand" href="#" style={{color: "white"}}>
-              <img src="../Images/Capture.PNG" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+              <img src="../src/Images/Capture.PNG" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
               Marie's Pizza
             </a>
             
@@ -25,16 +26,16 @@ class Navbar extends Component {
                 </li>
               
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#" style={{color: 'white'}}>Home</a>
+                  <a className="nav-link active homelink" aria-current="page" href="#" style={{color: 'white'}}>Home</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="aboutpizza.html" style={{color: 'white'}}>About Us</a>
+                <li className="nav-item aboutlink">
+                  <a className="nav-link" href="../AppAbout.jsx" style={{color: 'white'}}>About Us</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="menupizza.html" style={{color: 'white'}}>Menu</a>
+                <li className="nav-item menulink">
+                  <a className="nav-link" href="#" style={{color: 'white'}}>Menu</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="contactpizza.html" style={{color: 'white'}}>Contact Us</a>
+                <li className="nav-item contactlink">
+                  <a className="nav-link" href="#" style={{color: 'white'}}>Contact Us</a>
                 </li>
               </ul>
               

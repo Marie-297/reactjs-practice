@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from '../src/Components/Footer'
 function AppAbout() {
   return (
     <div>
@@ -81,19 +81,7 @@ function AppAbout() {
         </div>
 
         {/* Footer */}
-        <footer>
-          <div className="row footers">
-            {/* Contact Info */}
-            {/* Social Media Links */}
-            {/* Promotions */}
-            {/* Working Hours */}
-          </div>
-          <br /><hr style={{ color: 'white' }} />
-          <div className="d-flex" style={{ justifyContent: 'center', alignItems: 'center', color: 'white', fontWeight: 'bolder' }}>
-            <p>All Rights Reserved</p>
-            <p>&lt&lt&lt&copy2023Marie's Pizza&gt&gt&gt</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

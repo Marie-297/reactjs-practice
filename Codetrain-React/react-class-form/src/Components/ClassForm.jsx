@@ -18,7 +18,7 @@ function ClassForm() {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(name, email, password);
+    console.log(`${name}\n${email}\n${password}`);
   }
   const onHover = () => {
     sethover(true)

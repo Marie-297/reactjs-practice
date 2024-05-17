@@ -5,6 +5,7 @@ function ClassForm() {
   const [name, nameInput] = useState("")
   const [email, emailInput] = useState("")
   const [password, passwordInput] = useState("")
+  const [hover, sethover] = useState(false)
 
   const nameChange = (e) => {
     nameInput(e.target.value)
@@ -18,6 +19,12 @@ function ClassForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(name, email, password);
+  }
+  const onHover = () => {
+    sethover(true)
+  }
+  const offHover = () => {
+    sethover(false)
   }
 
   return (
@@ -36,7 +43,7 @@ function ClassForm() {
           <input type="password" value={password} placeholder='Enter your password' onChange={passwordChange} />
         </div>
         <div className="row-submit">
-          <input type="submit" />
+          <input type="submit" onMouseEnter={offHover} onMouseLeave={onHover} className='button' style={{color: hover ? "balck" : "darkred"}} />
           <a href="">Forgot Password</a>
         </div>
       </form>

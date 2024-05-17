@@ -1,9 +1,10 @@
 import React from 'react'
+import ClassForm from './Components/ClassForm'
 
 function App() {
   return (
-    <div>
-      
+    <div className='form'>
+      <ClassForm />
     </div>
   )
 }

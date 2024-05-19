@@ -6,6 +6,9 @@ function App() {
   return (
     <div>
       <Form />
+      <div className="span">
+        <span>Copyright &copy; 2024,Your Brand Name. Inc</span>
+      </div>
     </div>
   )
 }

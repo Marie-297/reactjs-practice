@@ -3,6 +3,7 @@ body {
   min-height: 100vh;
   height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
   background-image: linear-gradient(to right, rgb(52, 58, 65), rgb(137, 150, 157));
 }
 
@@ -16,13 +17,22 @@ body {
   align-items: center;
   justify-content: center;
 }
+.form-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .form {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 550px;
-  height: 400px;
+  width: 35%;
+  height: 60%;
   padding: 30px 50px;
   border-radius: 50px;
   background-image: linear-gradient(to right, rgb(120, 144, 150), rgb(194, 208, 208));
@@ -32,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  width: 450px;
+  width: 90%;
   justify-content: center;
   align-items: center;
 }
@@ -45,6 +55,11 @@ h2 {
   border-radius: 5px;
   padding: 15px 0px;
   border: 1px solid rgb(194, 208, 208);
+}
+.login {
+  background-color: rgb(52, 58, 65);
+  color: white;
+  font-weight: 700;
 }
 .form-login, .socials {
   padding: 0 30px;
@@ -119,3 +134,112 @@ button {
   left: 50%; 
   transform: translate(-50%, -50%); 
 }
+@media screen and (max-width: 400px) {
+  
+  .form {
+    width: 80%;
+    padding: 30px 5px;
+    border-radius: 0px;
+  }
+  .main-form {
+    width: 95%;
+  }
+  .socials, .form-login {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .form-login {
+    margin-top: 20px;
+  }
+} 
+
+@media screen and (max-width: 550px) and (min-width:401px) {
+  .form {
+    width: 80%;
+    padding: 30px 5px;
+    border-radius: 20px;
+  }
+  .main-form {
+    width: 95%;
+  }
+  .socials, .form-login {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .form-login {
+    margin-top: 20px;
+  }
+} 
+
+@media screen and (max-width: 650px) and (min-width:551px) {
+  .form {
+    width: 70%;
+    height: 50%;
+    padding: 30px 25px;
+  }
+  .main-form {
+    width:90%;
+  }
+  button {
+    width: 110px;
+  }
+} 
+
+@media screen and (max-width: 800px) and (min-width:651px) {
+  .form {
+    width: 70%;
+    height: 50%;
+    padding: 30px 25px;
+    border-radius: none;
+  }
+  .main-form {
+    width:90%;
+  }
+  button {
+    width: 130px;
+  }
+} 
+
+@media screen and (max-width: 1000px) and (min-width:801px) {
+  .form {
+    width: 60%;
+    height: 50%;
+    padding: 30px 25px;
+    border-radius: none;
+  }
+  .main-form {
+    width:90%;
+  }
+  button {
+    width: 135px;
+  }
+} 
+
+@media screen and (max-width: 1200px) and (min-width:1001px) {
+  .form {
+    width: 50%;
+    height: 50%;
+    padding: 30px 25px;
+    border-radius: none;
+  }
+  .main-form {
+    width:90%;
+  }
+  button {
+    width: 135px;
+  }
+} 
+
+@media screen and (max-width: 1350px) and (min-width:1201px) {
+  .form {
+    width: 40%;
+    padding: 30px 25px;
+    border-radius: none;
+  }
+  .main-form {
+    width:90%;
+  }
+  button {
+    width: 135px;
+  }
+} 

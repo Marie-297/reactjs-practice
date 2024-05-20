@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button' // Import the Button component
+import { v4 as uuid} from 'uuid';
 
 function Form(props) {
   // Define state variables for name and password
@@ -20,7 +21,7 @@ function Form(props) {
   // Event handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    let newUser = {name:name, password:password, id: 1} // define newUser
+    let newUser = {name:name, password:password, id: uuid()} // define newUser
     props.addUser(newUser) // add props
     inputName(""); //clear name input field after submission
     inputPassword("");//clear password input field after submission

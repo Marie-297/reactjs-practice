@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import Form from './Components/Form'
+import { v4 as uuid} from 'uuid';
 
 
 function App() {
   const [users, setUsers] = useState([
-    {name: '', password: '', id:''}
+    {name: '', password: '', id:uuid()}
   ])
 
   const addNewUser = (newUser) => {

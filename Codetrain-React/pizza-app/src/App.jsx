@@ -5,6 +5,7 @@ import Footer from './Components/Footer'
 import Welcomepage from './Components/Welcomepage'
 import Billboard from './Components/Billboard'
 import Connect from './Components/Connect'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

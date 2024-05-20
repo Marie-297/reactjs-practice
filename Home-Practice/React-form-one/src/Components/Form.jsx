@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Button from './Button' // Import the Button component
 
-function Form() {
+function Form(props) {
   // Define state variables for name and password
   const [name, inputName] = useState(""); // Initialize name state variable with an empty string
+
   const [password, inputPassword] = useState(""); // Initialize password state variable with an empty string
 
   // Event handler for name input change
@@ -19,6 +20,10 @@ function Form() {
   // Event handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
+    let newUser = {name:name, password:password, id: 1} // define newUser
+    props.addUser(newUser) // add props
+    inputName(""); //clear name input field after submission
+    inputPassword("");//clear password input field after submission
     console.log(`${name}\n${password}`); // Log the values of name and password to the console
   };
 

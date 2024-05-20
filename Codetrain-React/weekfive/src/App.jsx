@@ -1,26 +1,33 @@
-import { useState } from 'react'
-import Form from './Components/Form'
+import React, { useState} from 'react'
+import UserForm from './Components/UserForm'
+import Userlist from './Components/Userlist'
+import {Container, Row, Col} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [number, setNumber] = useState(0)
-  const [ishover, setishover] = useState(false)
 
-  const handleMouseEnter = () => {
-    setishover(true)
-  }
-  const handleMouseLeave = () => {
-    setishover(false)
-  }
+  const [users, setUsers] = useState([
+    {name: 'John Hayford', email: 'john@email.com', id: '1'},
+    {name: 'Harvey Blanc', email: 'harvey@email.com', id: '2'}
+  ]);
 
-  const addNumbers = () => {
-    setNumber(number + 1)
-  }
+  const addNewUser = (newUser) => {
+    setUsers([...users, newUser])
+  };
+  console.log(users);
 
   return (
     <>
-      <h1>{number}</h1>
-      <button onClick={addNumbers} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{backgroundColor: ishover ? "darkred" : "darkgray", borderRadius: "10px", color: ishover ? "white" : "darkred"}}>Click Here</button>
-      <Form />
+      <Container>
+        <Row>
+          <Col>
+            <UserForm addUser={addNewUser} />
+          </Col>
+          <Col>
+            <Userlist />
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }

@@ -25,7 +25,7 @@ function App() {
             <UserForm addUser={addNewUser} />
           </Col>
           <Col>
-            <Userlist />
+            <Userlist userlist={users}/>
           </Col>
         </Row>
       </Container>

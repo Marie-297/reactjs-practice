@@ -14,14 +14,16 @@ function UserForm(props) {
   } 
   const handleSubmit = (e) => {
     e.preventDefault()
-    let newUser = {
-      name: name,
-      email: email,
-      id: uuid()
+    if (name !== "" && email !== "") {
+      let newUser = {
+        name: name,
+        email: email,
+        id: uuid()
+      }
+      props.addUser(newUser)
+      setName("");
+      setEmail("");
     }
-    props.addUser(newUser)
-    setName("");
-    setEmail("");
   };
 
   return (

@@ -1,10 +1,16 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-function Userlist() {
+function Userlist(props) {
   return (
     <div>
-      <ListItem />
+      <h1>Component List</h1>
+      {props.userlist.map((user) => {
+        return (
+          <ListItem key={user.id} details={user}/>
+        )
+      })}
+     
     </div>
   )
 }

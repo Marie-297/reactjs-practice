@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Contacts from './Components/Contacts'
 
 function App() {
 
@@ -11,13 +12,7 @@ function App() {
 
   return (
     <div>
-      {contacts.map((contact, index) => (
-        <div>
-        <h3>{contact.name}</h3>
-        <p>{contact.phoneNumber}</p>
-        <p>{contact.location}</p>
-      </div>
-      ))}
+      <Contacts contacts={contacts}/>
     </div>
   )
 }

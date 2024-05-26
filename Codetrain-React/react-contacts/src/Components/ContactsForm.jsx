@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import 'react-phone-input-2/lib/style.css';
+import PhoneInput from 'react-phone-input-2';
+import phone from '../assets/Images/phone-call-svgrepo-com.svg'
 
 function ContactsForm(props) {
 
@@ -8,9 +11,6 @@ function ContactsForm(props) {
 
   const changeName = (e) => {
     setName(e.target.value)
-  }
-  const changeNumber = (e) => {
-    setNumber(e.target.value)
   }
   const changeLocation = (e) => {
     setLocation(e.target.value)
@@ -35,7 +35,10 @@ function ContactsForm(props) {
         <h1 style={{textAlign:"center", marginBottom: "30px"}}>Enter Contact Details</h1>
         <input type="text" className='name' placeholder='Enter your Full Name' value={name} onChange={changeName} />
 
-        <input type="number" className='number' placeholder='Enter your Phone Number' value={number} onChange={changeNumber} />
+        <div style={{position: 'relative', width: '100%'}}>
+          <PhoneInput className='number' inputStyle={{ width: '100%', position: 'relative' }} country={'gh'} placeholder='Enter your Phone Number' value={number} onChange={setNumber} />
+          <img src={phone} alt="" />
+        </div>
 
         <input type="text" className='location' placeholder='Enter your current Location' value={location} onChange={changeLocation} />
 

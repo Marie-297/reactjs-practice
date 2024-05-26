@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Contacts from './Components/Contacts'
+import ContactsForm from './Components/ContactsForm'
 
 function App() {
 
@@ -9,10 +10,19 @@ function App() {
     {name: 'Eunice Hagan', phoneNumber: '+233-234-888-452', location: 'Ogbojo Estate'},
     {name: 'Phill Addison', phoneNumber: '+233-554-989-100', location: 'Cantonments'},
   ])
+  const handleAddContact = (newContact) => {
+    setContacts([...contacts, newContact])
+  }
+  console.log(contacts);
 
   return (
-    <div>
-      <Contacts contacts={contacts}/>
+    <div className='mainbody'>
+      <div className="left-col">
+        <ContactsForm addContact = {handleAddContact} />
+      </div>
+      <div className="right-col">
+        <Contacts contacts={contacts}/>
+      </div>
     </div>
   )
 }

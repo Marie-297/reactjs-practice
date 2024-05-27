@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
 
-
 function Userform() {
-
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
 
   const nameChange = (e) => {
     setName(e.target.value)
   }
-
   const passwordhange = (e) => {
     setPassword(e.target.value)
   }
-  
-
   const handleSubmit = (e) => {
     e.preventDefault()
   }

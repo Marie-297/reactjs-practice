@@ -1,56 +1,61 @@
 import React, { useState } from 'react'
 
-function BookForm() {
+function BookForm(props) {
 
-  const [title, setTitle] = useState("")
-  const [author, setAuthor] = useState("")
-  const [description, setDescription] = useState("")
-  const [imageUrl, setImg] = useState("")
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [description, setDescription] = useState("");
+  const [imageUrl, setImg] = useState("");
 
   const changeTitle = (e) => {
     setTitle(e.target.value)
-  }
+  };
   const changeAuthor = (e) => {
     setAuthor(e.target.value)
-  }
+  };
   const changeDescription = (e) => {
     setDescription(e.target.value)
-  }
+  };
   const changeImageUrl = (e) => {
-    setImg(e.target.value)
-  }
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setImg(imageUrl);
+    }
+  };
+  // const changeImageUrl = (e) => {
+  //   setImg(e.target.value)
+  // }
   const handleSubmit = (e) => {
     e.preventDefault()
-    // let newBook = {
-    //   title: title,
-    //   author: author,
-    //   description: description,
-    //   imageUrl: imageUrl
-    // }
-    // props.addBook(newBook)
+    let newBook = {
+      title: title,
+      author: author,
+      description: description,
+      imageUrl: imageUrl
+    }
+    props.addBook(newBook)
     setTitle("")
     setAuthor("")
     setDescription("")
-    setImg("")
-    console.log(newBook);
-  }
+  };
 
   return (
-    <div>
+    <div onSubmit={handleSubmit} className='formdiv'>
       <form className='formbody'>
         <div className="left-form">
           <div className="title one">
-            <label htmlFor="">Book Title</label>
-            <input type="text" onChange={changeTitle} value={title} placeholder='Book title here...' />
+            <label htmlFor="title">Book Title</label>
+            <input type="text" id='title' onChange={changeTitle} value={title} placeholder='Book title here...' />
           </div>
-          <div className="autor one">
-            <label htmlFor="">Name of Author</label>
-            <input type="text" onChange={changeAuthor} value={author} placeholder="Enter Author's name..." />
+          <div className="author one">
+            <label htmlFor="author">Name of Author</label>
+            <input type="text" id='author' onChange={changeAuthor} value={author} placeholder="Enter Author's name..." />
           </div>
           <div className='one'>
-            <label htmlFor="">Add Image Cover</label>
+            <label htmlFor="img">Add Image Cover</label>
             <input type="file" accept="image/*"
-            onChange={changeImageUrl} value={author} placeholder="Enter Author's name..." />
+            onChange={changeImageUrl} />
           </div>
         </div>
         <div className="right-form">

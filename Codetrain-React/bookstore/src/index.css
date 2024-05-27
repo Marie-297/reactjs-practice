@@ -1,15 +1,103 @@
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(146, 141, 141);
+}
+#root {
+  width: 100%;
+  padding: 2%;
+}
 .one {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
+
+.firstrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, gray, rgb(62, 62, 97));
+  margin-bottom: 80px;
+  box-shadow: 0px 54px 60px rgba(0, 0, 0, 0.33) inset;
+  border-radius: 20px;
+}
 .left-form {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  
+}
+.formdiv {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
 }
 .formbody {
   display: flex;
-  column-gap: 20px;
-  margin-bottom: 50px;
+  column-gap: 50px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.cardtitle {
+  height: 200px;
+}
+.btn {
+  input {
+    width: 500px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+  }
+  input:hover {
+    background-color: lightgrey;
+    color: darkred;
+    font-weight: 700;
+  }
+}
+textarea, input{
+  padding: 10px;
+}
+.text {
+  font-size: 14px !important;
+  font-style: italic;
+}
+.bottomrow{
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  row-gap: 40px;
+}
+.carddiv {
+  height: 400px;
+}
+@media screen and (max-width: 767px) {
+  .formbody {
+    width: 100%;
+  }
+  .left-form, .right-form {
+    width: 45%;
+  }
+  .btn {
+    input {
+      width: 120%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 769px) {
+  .formbody {
+    width: 100%;
+  }
+  .left-form, .right-form {
+    width: 45%;
+  }
+  .btn {
+    input {
+      width: 200%;
+    }
+  }
 }

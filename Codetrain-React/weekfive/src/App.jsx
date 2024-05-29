@@ -16,7 +16,27 @@ function App() {
     setUsers([...users, newUser])
   };
   console.log(users);
+  
+  const editUser = (targetid, targetDetails) =>{
+    let arr = users.map((user) => {
+      if (user.id === targetid) {
+        return targetDetails
+      } else {
+        return user
+      }
+    })
+    setUsers(arr)
+    console.log(targetid, targetDetails);
+  }
 
+  const deleteUser = (targetid) => {
+    let filteredArr = users.filter((user) => {
+      if (user.id !== targetid) {
+        return user
+      }
+    })
+    setUsers(filteredArr)
+  }
   return (
     <>
       <Container>
@@ -25,7 +45,7 @@ function App() {
             <UserForm addUser={addNewUser} />
           </Col>
           <Col>
-            <Userlist userlist={users}/>
+            <Userlist userlist={users} editUser = {editUser} deleteUser={deleteUser}/>
           </Col>
         </Row>
       </Container>

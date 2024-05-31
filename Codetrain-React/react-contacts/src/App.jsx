@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import Contacts from './Components/Contacts'
+import ContactList from './Components/ContactList'
 import ContactsForm from './Components/ContactsForm'
 import { v4 as uuid} from 'uuid'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -14,7 +15,26 @@ function App() {
   const handleAddContact = (newContact) => {
     setContacts([...contacts, newContact])
   }
-  console.log(contacts);
+
+  const editContact = (editContactid,editDetails) => {
+    const arr = contacts.map((contact) => {
+      if (contact.id === editContactid) {
+        return editDetails
+      } else {
+        return contact
+      }
+    })
+    setContacts(arr)
+  }
+
+  const deleteContact = (delContactid) => {
+    let filteredContact = contacts.filter((contact) => {
+      if (contact.id !== delContactid) {
+        return contact
+      }
+    })
+    setContacts(filteredContact)
+  }
 
   return (
     <div className='mainbody'>
@@ -22,7 +42,7 @@ function App() {
         <ContactsForm addContact = {handleAddContact} />
       </div>
       <div className="right-col">
-        <Contacts contacts={contacts}/>
+        <ContactList contacts={contacts} editContact={editContact} deleteContact={deleteContact}/>
       </div>
     </div>
   )

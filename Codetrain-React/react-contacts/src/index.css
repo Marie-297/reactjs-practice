@@ -86,6 +86,14 @@ img {
     color: darkred;
   }
 }
+.modal {
+  .number {
+    background-image: url(../src/assets/Images/phone-call-svgrepo-com.svg);
+    background-position: 98% center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+  }
+}
 .left-col {
   border: 1px solid transparent;
   background-image: linear-gradient(90deg, rgb(107, 92, 5),rgb(172, 82, 97), purple);
@@ -110,6 +118,18 @@ img {
   background-color: white;
   color: rgb(35, 22, 35);
   font-weight: 700;
+}
+.delbtn {
+  background-color: red;
+  color: white;
+}
+.editbtn {
+  background-color: blue;
+  color: white;
+}
+.but {
+  width: 40%;
+  margin: auto 5px;
 }
 @media screen and (max-width: 768px) {
   .mainbody {

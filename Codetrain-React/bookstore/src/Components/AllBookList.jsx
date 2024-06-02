@@ -7,7 +7,7 @@ function AllBookList(props) {
       {props.allList.map((newBook) => {
         return (
           <div key={newBook.id}>
-            <BookList ImgSrc={newBook.imageUrl} title={newBook.title} author={newBook.author} description={newBook.description} />
+            <BookList ImgSrc={newBook.imageUrl} title={newBook.title} author={newBook.author} description={newBook.description} editNewBook={props.editBook} deleteNewBook={props.deleteBook} />
           </div>
         )
       })}

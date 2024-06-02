@@ -17,6 +17,13 @@ function App() {
   }
   console.log(books);
 
+  const editBook = () => {
+    console.log("Edited book");
+  }
+  const deleteBook = () => {
+    console.log("Delete book");
+  }
+
   return (
     <div>
       <Container>
@@ -25,7 +32,7 @@ function App() {
           <hr />
         </Row>
         <Row className='secondrow'>
-          <AllBookList allList={books}/>
+          <AllBookList allList={books} editBook={editBook} deleteBook={deleteBook}/>
         </Row>
       </Container>
     </div>

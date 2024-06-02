@@ -72,7 +72,13 @@ textarea, input{
   row-gap: 40px;
 }
 .carddiv {
-  height: 400px;
+  height: 450px;
+  padding-bottom: 20px;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
 }
 @media screen and (max-width: 767px) {
   .formbody {

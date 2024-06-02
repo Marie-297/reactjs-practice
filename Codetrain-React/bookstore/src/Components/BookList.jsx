@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'react-bootstrap'
+import {Card, Button} from 'react-bootstrap'
 
 function BookList(props) {
   return (
@@ -15,6 +15,10 @@ function BookList(props) {
             {props.description}
           </Card.Text>
         </Card.Body>
+        <div className="btns">
+          <Button variant="primary">Primary</Button>{' '}
+          <Button variant="danger">Danger</Button>{' '}
+        </div>
     </Card>
     </div>
   )

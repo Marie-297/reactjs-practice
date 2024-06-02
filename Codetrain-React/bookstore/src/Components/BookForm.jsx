@@ -23,9 +23,7 @@ function BookForm(props) {
       setImg(imageUrl);
     }
   };
-  // const changeImageUrl = (e) => {
-  //   setImg(e.target.value)
-  // }
+ 
   const handleSubmit = (e) => {
     e.preventDefault()
     let newBook = {

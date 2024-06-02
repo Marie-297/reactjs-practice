@@ -17,11 +17,24 @@ function App() {
   }
   console.log(books);
 
-  const editBook = () => {
-    console.log("Edited book");
+  const editBook = (editBookid,editBookDetail) => {
+    const editedBook = books.map((book) => {
+      if (book.id === editBookid) {
+        return editBookDetail
+      }
+      else {
+        return book
+      }
+    })
+    setBooks(editedBook)
   }
-  const deleteBook = () => {
-    console.log("Delete book");
+  const deleteBook = (delBookid) => {
+    const delArr = books.filter((book) => {
+      if (book.id !== delBookid) {
+        return book
+      }
+    })
+    setBooks(delArr);
   }
 
   return (

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import {Card, Button, Modal} from 'react-bootstrap'
 
 function BookList(props) {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [description, setDescription] = useState("");
-  const [imageUrl, setImg] = useState("");
+  const [title, setTitle] = useState(props.bookDetails.title);
+  const [author, setAuthor] = useState(props.bookDetails.author);
+  const [description, setDescription] = useState(props.bookDetails.description);
+  const [imageUrl, setImg] = useState(props.bookDetails.imageUrl);
 
   const changeTitle = (e) => {
     setTitle(e.target.value)
@@ -29,22 +29,34 @@ function BookList(props) {
   const changeModal = () => {
     setModal(!modal);
   }
+  const edit = (e) => {
+    e.preventDefault();
+    let editBookDetail = {
+      title: title,
+      author: author,
+      description: description,
+      imageUrl: imageUrl,
+    }
+    let mergedBookDetail = {...props.details, ...editBookDetail}
+    props.editNewBook(props.bookDetails.id, mergedBookDetail)
+    changeModal();
+  }
   return (
     <div>
       <Card style={{ width: '14rem' }} className='carddiv'>
-        <Card.Img className='cardtitle' variant="top" src={props.ImgSrc} alt={props.title} />
+        <Card.Img className='cardtitle' variant="top" src={props.bookDetails.imageUrl} alt={props.bookDetails.title} />
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
+          <Card.Title>{props.bookDetails.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            {props.author}
+            {props.bookDetails.author}
           </Card.Subtitle>
           <Card.Text className='text'>
-            {props.description}
+            {props.bookDetails.description}
           </Card.Text>
         </Card.Body>
         <div className="btns">
           <Button variant="primary" onClick={changeModal}>Edit</Button>{' '}
-          <Button variant="danger" onClick={props.deleteNewBook}>Delete</Button>{' '}
+          <Button variant="danger" onClick={() => props.deleteNewBook(props.bookDetails.id)}>Delete</Button>{' '}
         </div>
       </Card>
 
@@ -74,7 +86,7 @@ function BookList(props) {
 
         <Modal.Footer>
           <Button variant="secondary" onClick={changeModal}>Close</Button>
-          <Button variant="primary" onClick={props.editNewBook}>Save changes</Button>
+          <Button variant="primary" onClick={edit}>Save changes</Button>
         </Modal.Footer>
       </Modal>
     </div>

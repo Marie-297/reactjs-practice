@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Image() {
+function Image(props) {
   return (
-    <div>
-      <div className="imagecard">
-        <img src='' alt="" />
+    <div className='imgdiv'>
+      <div>
+        <img src={props.srcUrl} alt="" className='img'/>
       </div>
     </div>
   )

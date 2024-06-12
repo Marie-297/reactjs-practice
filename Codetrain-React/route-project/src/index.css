@@ -1,3 +1,12 @@
+#root {
+  height: 100%;
+  width: 100vw;
+}
+body {
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 .logo {
   width: 100px;
   height: 50px;
@@ -47,7 +56,8 @@
   border: 1px solid darkred;
   display: flex;
   align-items: center;
-  justify-content: center; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 
 }
 .listdiv {
@@ -57,4 +67,48 @@
   flex-wrap: wrap;
   column-gap: 30px;
  
+}
+.welcome {
+  font-size: 50px;
+}
+.Wecomepage, .contact, .about, .details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 50px;
+  }
+}
+.footer {
+  margin-top: auto;
+  width: 100vw;
+  display: flex;
+  column-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 200px 10px 200px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.layout {
+  display: flex;
+  height: 100%;
+  overflow-y: hidden !important;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (miax-width: 768px) {
+  
 }

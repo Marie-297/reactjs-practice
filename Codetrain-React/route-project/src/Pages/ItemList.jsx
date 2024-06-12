@@ -13,7 +13,7 @@ function ItemList() {
     { name: 'Ladies Klosset', img:ladies, id: uuid()},
     { name: 'Mens Klosset', img:men, id: uuid()},
     { name: 'Footwear', img:foot, id: uuid()},
-    { name: 'Sanitaries', img:access, id: uuid()},
+    { name: 'Accessories', img:access, id: uuid()},
   ]
   return (
     <div className='listdiv'>

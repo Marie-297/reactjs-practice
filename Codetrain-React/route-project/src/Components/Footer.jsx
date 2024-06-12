@@ -8,6 +8,7 @@ import instagram from '../Images/instagram.svg'
 function Footer() {
   return (
     <div className='footer'>
+      <p> &copy; 2024 @Marie. All rights reserved.</p>
       <img src={snapchat} alt="snapchat" />
       <img src={tiktok} alt="tiktok" />
       <img src={twitter} alt="twitter" />

@@ -6,7 +6,7 @@ import Footer from './Footer'
 function Layout() {
   return (
     <div className='layout'>
-      <Navbar />
+      <Navbar className='nav-bar' />
       <Outlet className='content' />
       <Footer />
     </div>

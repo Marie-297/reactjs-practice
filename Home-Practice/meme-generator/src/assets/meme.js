@@ -20,7 +20,7 @@ export default {
       },
       {
         "id": 5,
-        "imageUrl": "c:\Users\HPELIT~1\AppData\Local\Temp\meme-6195988_1280.webp",
+        "imageUrl":"https://static.wikia.nocookie.net/8cf7b4b8-52a1-4216-b524-6f18f866be06/scale-to-width/755",
       },
       {
         "id": 6,
@@ -65,6 +65,38 @@ export default {
       {
         "id": 16,
         "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fmeme&psig=AOvVaw12IMg0yTD-jYZKiuv3nQ2s&ust=1717104213015000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJih6LfYs4YDFQAAAAAdAAAAABAE",
+      },
+      {
+        "id": 17,
+        "imageUrl": "https://content.imageresizer.com/images/memes/everythings-fine-meme-3.jpg",
+      },
+      {
+        "id": 18,
+        "imageUrl": "https://img.freepik.com/free-photo/monkey-man-making-silence-gesture_1368-7078.jpg",
+      },
+      {
+        "id": 19,
+        "imageUrl": "https://ih1.redbubble.net/image.2031511979.2569/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      },
+      {
+        "id": 20,
+        "imageUrl": "https://favim.com/pd/s11/orig/8/894/8945/89451/twitter-phineasandferb-reaction-Favim.com-8945161.jpg",
+      },
+      {
+        "id": 21,
+        "imageUrl": "https://preview.redd.it/they-both-are-good-franchises-tbh-meme-original-without-text-v0-tuxblk0g7btc1.jpg?width=640&crop=smart&auto=webp&s=0d179ac4b139b574ed95a90ecaf9f67550511ad6",
+      },
+      {
+        "id": 22,
+        "imageUrl": "https://www.nicepng.com/png/detail/30-306429_pngs-for-trolls-and-memes-you-don-t.png",
+      },
+      {
+        "id": 23,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyfrTbfVmft0GkjWB5qDVTOS4gBYR8_X8Gg&s",
+      },
+      {
+        "id": 24,
+        "imageUrl": "https://res.cloudinary.com/teepublic/image/private/s--Gdl_OjI4--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/t_watermark_lock/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1679223071/production/designs/41418527_0.jpg",
       },
       // Add more meme objects as needed
     ]

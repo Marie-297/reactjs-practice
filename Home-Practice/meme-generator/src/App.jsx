@@ -6,22 +6,30 @@ import Image from './Components/Image.jsx'
 
 function App(props) {
 
-  const [memeImg, setMemeImg] = useState("")
+  const [memeImg, setMemeImg] = useState({
+    topText: '',
+    bottomText: '',
+    imageUrl: "https://i.imgflip.com/1bij.jpg"
+  })
   console.log(memeImg)
   const getMemeImage = (e) => {
     const memeArr = memeData.data.memes
     const randomNumber = Math.floor(Math.random() * memeArr.length)
     const url = memeArr[randomNumber].imageUrl
-    setMemeImg(url)
-    console.log(url)
+    const id = memeArr[randomNumber].id
     e.preventDefault()
+    setMemeImg(prevState => ({
+      ...prevState,
+      imageUrl: url
+    }));
+    console.log(id)
   }
   return (
     <div>
       <Header />
       <div className="mainbody">
-        <InputForm click={getMemeImage} />
-        <Image className="imagecard" srcUrl={memeImg} />
+        <InputForm click={getMemeImage} setMemeImg={setMemeImg} memeImg={memeImg} />
+        <Image className="imagecard" srcUrl={memeImg.imageUrl} topText={memeImg.topText} bottomText={memeImg.bottomText} />
       </div>
     </div>
   )

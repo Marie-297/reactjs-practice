@@ -8,15 +8,18 @@ function ContactList() {
     return state.userReducer;
   })
   return (
-    <>
-      state.contacts.map((contact) => {
-          <div>
-            <p>{contact.name}</p>
-            <p>{contact.email}</p>
-            <p>{contact.location}</p>
+    <div className='list'>
+      <h1>CONTACT LISTS</h1>
+      {state.users.map((contact) => {
+        return (
+          <div key={contact.id}>
+            <h2>{contact.name}</h2>
+            <h4>{contact.email}</h4>
+            <h4>{contact.location}</h4>
           </div>
-      })
-    </>
+        )
+      })}
+    </div>
   )
 }
 

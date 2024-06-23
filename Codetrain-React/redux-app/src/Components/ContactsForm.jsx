@@ -13,15 +13,15 @@ function ContactsForm() {
   const [location, setLocation] = useState('')
   const dispatch = useDispatch()
 
-  // const changeName = (e) => {
-  //   setName(e.target.value)
-  // }
-  // const changeEmail = (e) => {
-  //   setEmail(e.target.value)
-  // }
-  // const changeLocation = (e) => {
-  //   setLocation(e.target.value)
-  // }
+  const changeName = (e) => {
+    setName(e.target.value)
+  }
+  const changeEmail = (e) => {
+    setEmail(e.target.value)
+  }
+  const changeLocation = (e) => {
+    setLocation(e.target.value)
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
     const newContact = {
@@ -41,11 +41,11 @@ function ContactsForm() {
     <div className='formBody'>
       <form onSubmit={handleSubmit} className='form'>
         <h1>Enter Contact Details</h1>
-        <input type="text" className='name' placeholder='Enter your Full Name' value={name} />
+        <input type="text" className='name' placeholder='Enter your Full Name' value={name} onChange={changeName} />
 
-        <input className='email' placeholder='Enter your Email address' />
+        <input className='email' placeholder='Enter your Email address' value={email} onChange={changeEmail} />
 
-        <input type="text" className='location' placeholder='Enter your current Location' />
+        <input type="text" className='location' placeholder='Enter your current Location' value={location} onChange={changeLocation} />
 
         <input type="submit" value="Add New Contact" className='submitbtn' />
       </form>

@@ -1,70 +1,79 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
+import { editUser, deleteUser} from '../slices/userSlice'
+import { useDispatch } from 'react-redux'
 
-function Contacts(props) {
-
+function ContactsItem(props) {
+  const dispatch = useDispatch()
+  const { contact } = props
   const [modal, setModal] = useState(false)
-
   const changeModal = () => {
     setModal(!modal)
   }
-
-  const [contactname, setName] = useState(props.details.name)
-  const [number, setNumber] = useState(props.details.phoneNumber)
-  const [location, setLocation] = useState(props.details.location)
-
+  const [name, setName] = useState(contact.name)
+  const [email, setEmail] = useState(contact.email)
+  const [location, setLocation] = useState(contact.location)
   const changeName = (e) => {
     setName(e.target.value)
+  }
+  const changeEmail = (e) => {
+    setEmail(e.target.value)
   }
   const changeLocation = (e) => {
     setLocation(e.target.value)
   }
-  const changeNumber = (e) => {
-    setNumber(e.target.value)
+  const handleEdit = (e) => {
+    changeModal()
+    e.preventDefault()
+    let newEdit = {
+      name,
+      email,
+      location,
+    }
+    dispatch(editUser({
+      id: contact.id,
+      newEdit,
+    }))
+  }
+  const handleDelete = (e) => {
+    dispatch(deleteUser(contact.id))
   }
   
-  const handleEdit = (e) => {
-    e.preventDefault()
-    let editDetails = {
-        name: contactname,
-        phoneNumber: number,
-        location: location,
-      }
-    let mergedEditDetails = {...props.details,...editDetails}
-    props.edit(props.details.id,mergedEditDetails)
-    changeModal();
-  }
 
   return (
     <div className='details'>
-      <h3>{props.details.name}</h3>
-      <p>{props.details.phoneNumber}</p>
-      <p>{props.details.location}</p>
-      <button onClick={changeModal} className='editbtn but'>Edit</button>
-      <button className='delbtn but' onClick={() => props.delete(props.details.id)}>Delete</button>
-
+      <h2>{contact.name}</h2>
+      <h4>{contact.email}</h4>
+      <h4>{contact.location}</h4>
+      <div className="btns">
+        <Button variant="primary" onClick={changeModal}>Edit</Button>{' '}
+        <Button variant="danger" onClick={handleDelete}>Delete</Button>{' '}
+      </div>
+      
       <Modal show={modal} onHide={changeModal} className='modal'>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Edit Contact</Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
           <form className='form'>
-            <input type="text" className='name' placeholder='Enter your Full Name' value={contactname} onChange={changeName} />
+            <input type="text" className='name' placeholder='Enter your Full Name' value={name} onChange={changeName} />
 
-            <input className='number' country={'gh'} placeholder='Enter your Phone Number' value={number} onChange={changeNumber} />
+            <input className='email' placeholder='Enter your Email address' value={email} onChange={changeEmail} />
 
             <input type="text" className='location' placeholder='Enter your current Location' value={location} onChange={changeLocation} />
           </form>
         </Modal.Body>
-
         <Modal.Footer>
-          <Button variant="secondary" onClick={changeModal}>Close</Button>
-          <Button variant="primary" onClick={handleEdit}>Save changes</Button>
+          <Button variant="secondary" onClick={changeModal}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleEdit}>
+            Save Changes
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>
   )
 }
 
-export default Contacts
+export default ContactsItem

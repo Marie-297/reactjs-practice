@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import ContactsItem from './ContactsItem';
 import { useSelector } from 'react-redux';
+import ContactsItem from './ContactsItem';
 
 
 function ContactList() {
   const state = useSelector((state) => {
     return state.userReducer;
   })
+ 
   return (
     <div className='list'>
       <h1>CONTACT LISTS</h1>
       {state.users.map((contact) => {
         return (
-          <div key={contact.id}>
-            <h2>{contact.name}</h2>
-            <h4>{contact.email}</h4>
-            <h4>{contact.location}</h4>
+          <div key={contact.id} className='listitem'>
+            <ContactsItem contact={contact} />
           </div>
         )
       })}

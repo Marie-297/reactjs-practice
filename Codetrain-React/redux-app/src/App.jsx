@@ -12,7 +12,7 @@ function App() {
           <Col>
             <ContactsForm />
           </Col>
-          <Col>
+          <Col className='listcol'>
             <ContactList />
           </Col>
         </Row>

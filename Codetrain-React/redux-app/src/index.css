@@ -5,3 +5,48 @@
 * {
   margin: 0;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  input {
+    font-weight: 700;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-bottom: 2px solid darkred;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+  }
+  input::placeholder {
+    font-style: italic;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+.submitbtn {
+  background-color: rgb(35, 22, 35);
+  color: white;
+  cursor: pointer;
+  height: 50px;
+}
+.submitbtn:hover {
+  background-color: white;
+  color: rgb(35, 22, 35);
+  font-weight: 700;
+}
+.formBody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -94,6 +94,9 @@ body {
     font-size: 50px;
   }
 }
+.about {
+  flex-direction: column;
+}
 .contact {
   column-gap: 100px;
 }

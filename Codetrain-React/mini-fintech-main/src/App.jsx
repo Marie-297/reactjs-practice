@@ -16,11 +16,41 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import { useEffect, useState } from "react";
+import { db, auth } from "./firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 
 
 
 const App = () => {
 
+  const [userDetails, setUserDetails] = useState(null)
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    //Fetch user details
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const docRef = doc(db, "users", user.uid)
+        const docSnap = await getDoc(docRef)
+        if (docSnap.exists()) {
+          setUserDetails(docSnap.data())
+        } else {
+          setUserDetails(null)
+          console.log("user not found")
+        }
+      }
+      setLoading(false)
+    })
+    return () => unsubscribe()
+  },[]);
+
+  if (loading) {
+    return(
+      <div style={styles.loadingContainer}>
+        <div>Loading...</div>
+      </div>
+    )
+  }
   // Create routes based on user authentication state
   const routes = createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>

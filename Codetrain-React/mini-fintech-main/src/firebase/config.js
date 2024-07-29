@@ -34,7 +34,7 @@ export const login = (email, password) => {
 }
 
 //signout a user
-export const logOut = () => {
+export const logout = () => {
   return signOut(auth)
 }
 

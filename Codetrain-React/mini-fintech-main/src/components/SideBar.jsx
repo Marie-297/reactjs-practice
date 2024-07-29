@@ -2,14 +2,18 @@ import { PiSquaresFourFill } from "react-icons/pi";
 import { BiLogOut, BiMessageSquareDetail } from "react-icons/bi";
 import { TbCirclesRelation } from "react-icons/tb";
 import { Link } from "@nextui-org/react";
-
+import { logout } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
-
 const SideBar = () => {
   const navigate = useNavigate();
-
-
-
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate({ pathname: "/login" });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const links = [
     {
       name: "dashboard",
@@ -27,10 +31,8 @@ const SideBar = () => {
       icon: <TbCirclesRelation />,
     },
   ];
-
   const listItem = links.map((link) => {
     const { name, icon, href } = link;
-
     return (
       <Link
         href={href}
@@ -42,7 +44,6 @@ const SideBar = () => {
       </Link>
     );
   });
-
   return (
     <div className="px-5 py-8 flex flex-col justify-between h-full">
       <div className="flex flex-col gap-y-5">{listItem}</div>
@@ -50,7 +51,7 @@ const SideBar = () => {
         <Link
           href="/login"
           className="text-slate-600 hover:text-cyan-500 transition-colors duration-100 ease-in-out"
-          
+          onClick={handleLogout}
         >
           <div className="text-3xl">
             <BiLogOut />
@@ -61,5 +62,4 @@ const SideBar = () => {
     </div>
   );
 };
-
 export default SideBar;

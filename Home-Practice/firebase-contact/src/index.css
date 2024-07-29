@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.log-btns {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.auth {
+  width: 400px;
+}
